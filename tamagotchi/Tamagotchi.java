@@ -124,12 +124,13 @@ public class Tamagotchi {
             System.out.println("Tamagotchi morreu\n");
         }
         else{
-            if(v_energia <= 5){
+            if(v_energia < 5){
                 System.out.println("Tamagotchi nao esta com sono");
             }
-            else if(v_energia > 5){
+            else if(v_energia >= 5){
                 int valor = this.pet.energia_max - this.pet.getEnergia();
                 this.pet.setEnergia(this.pet.getEnergia()+valor);
+                this.pet.setSaciedade(this.pet.getSaciedade()-1);
                 this.pet.idade += valor;
             }
         }
@@ -192,3 +193,4 @@ public class Tamagotchi {
    
     
 }
+
