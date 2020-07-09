@@ -160,6 +160,7 @@ public class Tamagotchi {
         
         while(true){
          String line = input.nextLine();
+		 System.out.println("$" + line);
          String entrada[] = line.split(" ");
          
          if(entrada[0].equals("end")){
