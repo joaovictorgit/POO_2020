@@ -28,19 +28,13 @@ class Kid {
     }
 }
 class Trampoline{
-    private float saldo;
+    
     private int capacidade_max = 5;
     public void Trampoline(){
-        this.saldo = 0;
+        
     }
 
-    public float getSaldo() {
-        return saldo;
-    }
-
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
-    }
+    
 
     public int getCapacidade_max() {
         return capacidade_max;
@@ -51,13 +45,13 @@ class Trampoline{
     }
     
     
-    
+    Kid kid;
     
     ArrayList <String> kidsWaiting = new ArrayList();
     ArrayList <String> kidsPlaying = new ArrayList();
     
     public void chegou(String nome, String idade){
-        Kid kid = new Kid();
+        kid = new Kid();
         int tam = kidsWaiting.size();
         kid.setNome(nome);
         kid.setIdade(Integer.parseInt(idade));
@@ -84,9 +78,8 @@ class Trampoline{
         }else{
             kidsPlaying.add(kidsWaiting.get(0));
             kidsWaiting.remove(kidsWaiting.get(0));
-            setSaldo(getSaldo()+1);
             System.out.println("Entrou no pula pula!");
-            System.out.println("Faturramento R$ "+ getSaldo());
+           
         }
         
     }
@@ -97,7 +90,7 @@ class Trampoline{
         kidsWaiting.add(tam, kidsPlaying.get(0));
         kidsPlaying.remove(kidsPlaying.get(0));
     }
-    
+  
     public void fechar(){
         kidsWaiting.removeAll(kidsWaiting);
         kidsPlaying.removeAll(kidsPlaying);
