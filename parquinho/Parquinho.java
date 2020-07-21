@@ -85,15 +85,22 @@ class Trampoline{
     ArrayList <Kid> kidsPlaying = new ArrayList();
     
     public void chegou(String nome, String idade){
+        // Novo Kid
         kid = new Kid();
+        // Tamanho do ArrayList
         int tam = kidsWaiting.size();
+        // Usando set para atualizar os atributos nome e idade
         kid.setNome(nome);
         kid.setIdade(Integer.parseInt(idade));
-        //kidsWaiting.add(kid.getNome() + kid.getIdade());
+        // add Kid
         kidsWaiting.add(kid);
         
     }
     public void show(){
+        /*
+		Printa fila de Kid e as que estão no pula pula e 
+		mostrá em quanto tempo falta para a última criança criança entrar no pula pula
+		*/ 
         int tam_waiting = kidsWaiting.size();
         
         for(int i = tam_waiting - 1; i >= 0; --i)
@@ -122,7 +129,8 @@ class Trampoline{
     }*/
     
     public void entrar(){
-        // Tamanho do ArrayList kidsPlaying
+        // Método que coloca criança no pula e diz os minutos que ela tem direito de pular
+        // Tamanho do ArrayList kidsPlaying(int tam)
         int tam = kidsPlaying.size();
         if(getCapacidade_max() <= tam){
             System.out.println("Capacidade máxima atingida");
@@ -141,7 +149,8 @@ class Trampoline{
     }
     
     public void sair(){
-        // Tamanho do ArrayList kidsWaiting
+        // Método que ritara criança do pula pula e a coloca no final da fila
+        // Tamanho do ArrayList kidsWaiting(int tam)
         if(getTempo() < 12){
             int tam = kidsWaiting.size();
             kidsWaiting.add(tam, kidsPlaying.get(0));
@@ -154,12 +163,14 @@ class Trampoline{
     }
   
     public void fechar(){
+        // Método que retira as cranças da fila e do pula pula
         kidsWaiting.removeAll(kidsWaiting);
         kidsPlaying.removeAll(kidsPlaying);
         System.out.println("O pula pula está fechado");
     }
     
     public void papai_chegou(String nome){
+        // Método que busca a criança se estiver no pula pula ou na fila e a retira
         setPai(nome);
         for(int i = 0; i < kidsWaiting.size(); i++){
             if(kidsWaiting.get(i).getNome().equals(getPai())){
