@@ -38,8 +38,6 @@ class Trampoline{
     private float tempo;
     private float tempo_fechar = 12;
     private String pai;
-	
-	
     public void Trampoline(){
         
     }
@@ -83,16 +81,16 @@ class Trampoline{
     
     Kid kid;
     
-    ArrayList <String> kidsWaiting = new ArrayList();
-    ArrayList <String> kidsPlaying = new ArrayList();
+    ArrayList <Kid> kidsWaiting = new ArrayList();
+    ArrayList <Kid> kidsPlaying = new ArrayList();
     
     public void chegou(String nome, String idade){
         kid = new Kid();
         int tam = kidsWaiting.size();
         kid.setNome(nome);
         kid.setIdade(Integer.parseInt(idade));
-        kidsWaiting.add(kid.getNome() + kid.getIdade());
-       
+        //kidsWaiting.add(kid.getNome() + kid.getIdade());
+        kidsWaiting.add(kid);
         
     }
     public void show(){
