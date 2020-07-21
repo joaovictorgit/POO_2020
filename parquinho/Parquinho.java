@@ -162,14 +162,14 @@ class Trampoline{
     public void papai_chegou(String nome){
         setPai(nome);
         for(int i = 0; i < kidsWaiting.size(); i++){
-            if(kidsWaiting.get(i).equals(getPai())){
+            if(kidsWaiting.get(i).getNome().equals(getPai())){
                 kidsWaiting.remove(i);
             }else{
                 System.out.println("Criança não se encotra na fila");
             }
         }
         for(int i = 0; i < kidsPlaying.size(); i++){
-            if(kidsPlaying.get(i).equals(getPai())){
+            if(kidsPlaying.get(i).getNome().equals(getPai())){
                 kidsPlaying.remove(i);
             }else{
                 System.out.println("Criança não se encotra no pula pula");
