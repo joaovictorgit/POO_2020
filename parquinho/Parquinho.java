@@ -97,13 +97,10 @@ class Trampoline{
         
     }
     public void show(){
-        /*
-		Printa fila de Kid e as que estão no pula pula e 
-		mostrá em quanto tempo falta para a última criança criança entrar no pula pula
-		*/ 
-        int tam_waiting = kidsWaiting.size();
+        // Printa fila de Kid e as que estão no pula pula e mostrá em quanto tempo falta para a última criança criança entrar no pula pula
         
-        for(int i = tam_waiting - 1; i >= 0; --i)
+        
+        for(int i = kidsWaiting.size() - 1; i >= 0; --i)
             System.out.print(kidsWaiting.get(i) + " ");
         System.out.print("=>");
         System.out.print("[ ");                        
@@ -111,8 +108,8 @@ class Trampoline{
             System.out.printf(kidsPlaying.get(j) + " ");
         }
         System.out.print("]\n");
-        if(tam_waiting >= 1){
-            System.out.println("A última criança entrará em " + (tam_waiting*2));
+        if(kidsWaiting.size() >= 1){
+            System.out.println("A última criança entrará em " + (kidsWaiting.size()*2));
         }
     }
     
