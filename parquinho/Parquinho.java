@@ -113,17 +113,17 @@ class Trampoline{
         }
     }
     
-    /*@Override
+    @Override
     public String toString(){
         String out = "=>";
-        for(String kid: kidsWaiting)
+        for(Kid kid: kidsWaiting)
             out += kid + " ";
-        out += "=> [";
-        for(String kid: kidsPlaying)
+        out += "=> [ ";
+        for(Kid kid: kidsPlaying)
             out += kid + " ";
         out += "]";
         return out;
-    }*/
+    }
     
     public void entrar(){
         // Método que coloca criança no pula e diz os minutos que ela tem direito de pular
@@ -207,8 +207,9 @@ public class Parquinho {
                 pula.chegou(entrada[1], entrada[2]);
                 
             }else if(entrada[0].equals("show")){
+                // Métodos show e toString() que imprimi os 2 vetores. Ambos realizam a msm ação
                 pula.show();
-                //pula.toString();
+                //System.out.println(pula);
             }else if(entrada[0].equals("in")){
                 pula.entrar();
                 
