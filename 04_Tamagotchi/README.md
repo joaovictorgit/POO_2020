@@ -1,4 +1,4 @@
-# POO_2020
+# Tamagotchi
 
 - O que você fez
     - Fiz o projeto do Tamagotchi 
