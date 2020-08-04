@@ -174,14 +174,14 @@ class Maquina{
      
     @Override
     public String toString(){
-        
+        int i = 0;
         String out = "saldo: " +getSaldo() + "0\n";
         for(Produto prod : prod){
-            if(prod == null){
-                out += "[ empty : 0 U : 0.00 RS ]\n";
-            }else{
-                out += "[ "+prod + "]\n";
-            }
+            if(prod == null && i < getEspirais()){
+                out += i + " [ empty : 0 U : 0.00 RS ]\n";
+            }else if(prod != null && i < getEspirais()){
+                out += i + " [ "+prod + "]\n";
+            }i++;
         }
         return out;
     }
