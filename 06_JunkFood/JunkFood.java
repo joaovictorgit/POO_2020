@@ -52,6 +52,7 @@ class Produto{
     
     
     
+    @Override
     public String toString(){
         return nome + " : " + q_unidade + " U : "+ preco + "0 RS";
     }
@@ -168,7 +169,7 @@ class Maquina{
     }
     
     public void troco(){
-        System.out.println("voce recebeu " + getSaldo() + " RS");
+        System.out.println("voce recebeu " + getSaldo() + "0 RS");
         setSaldo(0);
     }
      
@@ -176,11 +177,11 @@ class Maquina{
     public String toString(){
         int i = 0;
         String out = "saldo: " +getSaldo() + "0\n";
-        for(Produto prod : prod){
-            if(prod == null && i < getEspirais()){
+        for(Produto prod01 : prod){
+            if(prod01 == null && i < getEspirais()){
                 out += i + " [ empty : 0 U : 0.00 RS ]\n";
-            }else if(prod != null && i < getEspirais()){
-                out += i + " [ "+prod + "]\n";
+            }else if(prod01 != null && i < getEspirais()){
+                out += i + " [ "+prod01 + "]\n";
             }i++;
         }
         return out;
